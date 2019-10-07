@@ -3,3 +3,5 @@
 *.out
 *.sw?
 *lock*
+*.bbl
+*.blg

@@ -38,11 +38,11 @@ sophisticated techniques to compute on the exascale.
 \noindent
 With the explosion in machine learning research we have seen many sophisticated
 and complex techniques come out that can greatly help the scientific community.
-Techniques like super resolution~\cite{} can be used as a method to compress
+Techniques like super resolution~\cite{super} can be used as a method to compress
 images and greatly reduce storage space. Researchers have shown that machine
-learning algorithms are capable of performing scientific computations~\cite{}.
+learning algorithms are capable of performing scientific computations~\cite{Berg}.
 There has also been work that has used machine learning to help explore the
-parameter space of scientific simulations~\cite{}. Techniques like this allow
+parameter space of scientific simulations~\cite{He}. Techniques like this allow
 for post hoc exploration that would not be possible without performing more
 simulations, with those varying parameters. 
 
@@ -61,8 +61,8 @@ they can best be applied. Finally, I will focus on converting these to online
 algorithms, so that training and fine tuning can be done in situ.
 
 \noindent
-While there has been a lot of work with interpolation~\cite{} and frame
-upscaling~\cite{} in the commercial space, the problem is more complex within
+While there has been a lot of work with interpolation and frame
+upscaling~\cite{frame} in the commercial space, the problem is more complex within
 the scientific regime. Scientific data in HPC is much larger than those
 conventionally used in machine learning algorithms, with simulations capable of
 producing petabytes of data a day.  Machines do not exist that can store this
@@ -87,24 +87,23 @@ starting again from the beginning. With the completion of this milestone
 scientists will be able to more easily restart simulations and be able to save
 more data out for post hoc analysis.
 
-\noindent
-Once data has been adequately reduced in size and proper encodings have been
-developed, focus can shift to developing architectures that will allow for time
-series interpolation. The goal here is to develop architectures that will be
-able to predict some of the underlying physics and perform interpolations over
-large time-steps. Some of the newest machine learning techniques provide methods
-for this to be possible. Architectures like Recurrent Neural Networks (RNNs),
-Transformers, and Attention demonstrate the ability for the algorithms to
-become contextually aware. An important aspect of interpolating scientific
-data is to understand how parts of the data move within a given system.
-Conventional methods use momentum of data points to determine how different
-subsections of data evolve compared to others. These architectures have provided
-great leaps forward in Natural Language Processing (NLP) with the ability to
-construct large scale text that is nearly indistinguishable from human
-writing~\cite{}. This same contextual awareness can theoretically be applied to
-the language of scientific analysis. These architectures provide a necessary
-component that helps enable algorithms to understand the structure of time
-within scientific computing. 
+\noindent Once data has been adequately reduced in size and proper encodings
+have been developed, focus can shift to developing architectures that will
+allow for time series interpolation. The goal here is to develop architectures
+that will be able to predict some of the underlying physics and perform
+interpolations over large time-steps. Some of the newest machine learning
+techniques provide methods for this to be possible. Architectures like
+Recurrent Neural Networks (RNNs), Transformers, and Attention demonstrate the
+ability for the algorithms to become contextually aware. An important aspect of
+interpolating scientific data is to understand how parts of the data move
+within a given system.  Conventional methods use momentum of data points to
+determine how different subsections of data evolve compared to others. These
+architectures have provided great leaps forward in Natural Language Processing
+(NLP) with the ability to construct large scale text that is nearly
+indistinguishable from human writing~\cite{radford2019language}. This same
+contextual awareness can theoretically be applied to the language of scientific
+analysis. These architectures provide a necessary component that helps enable
+algorithms to understand the structure of time within scientific computing. 
 
 \noindent
 Generalization is one of the most difficult tasks in machine learning. With any
@@ -135,14 +134,24 @@ are able to understand the basics of the underlying physics.
 %
 \\\textbf{Broader Impacts} 
 \\\noindent
+Success of this research would result in a large reduction in memory consumption
+of HPC applications while also allowing for better understanding of data. HPC is
+being used to tackle some of the toughest scientific challenges facing humanity,
+namely climate research, clean energy, and medical research. Enabling this
+science to be done more efficiently and faster directly results in a higher
+quality for people living on the planet. Through NSF this research can be public
+and help scientists everywhere have better tools when facing the most
+challenging problems.
 
 % --------------- WORKS CITED (10pt FONT) ---------------------
 
 \footnotesize
-\begin{thebibliography}{aa}
-
-%\bibitem{amau} Maurer, Andrew B. \emph{\LaTeX \ Template for the National Science Foundation's Graduate Research fellowship Program}.
-
-\end{thebibliography}
+\bibliographystyle{acm}
+\bibliography{Research}
+%\begin{thebibliography}{aa}
+%
+%%\bibitem{amau} Maurer, Andrew B. \emph{\LaTeX \ Template for the National Science Foundation's Graduate Research fellowship Program}.
+%
+%\end{thebibliography}
 \end{document}
 
