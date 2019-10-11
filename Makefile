@@ -4,6 +4,7 @@ Research.pdf: Research.tex Research.bib *.tex
 	#touch Research.tex
 	pdflatex Research
 	pdflatex Research
+	pdflatex Personal
 
 clean:
 	rm *.aux *.log *.out *.pdf *.bbl *.blg *.brf
