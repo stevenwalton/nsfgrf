@@ -14,6 +14,7 @@
 \usepackage[tiny,compact]{titlesec}
 % --------------- MATH PACKAGES -------------------------------
 \usepackage{amsmath,amsthm,amssymb}
+\setlength{\parindent}{0pt}
 \begin{document}
 % --------------- TITLE AND NAME ------------------------------
 \begin{center}
@@ -22,11 +23,11 @@
 \end{center}
 % --------------- CONTENT -------------------------------------
 
-\noindent
+
 \textbf{Background:}
 %
 
-\noindent One large challenge for simulations on High Performance Computing
+ One large challenge for simulations on High Performance Computing
 (HPC) is handling data. There is not enough storage capacity to save simulation
 output to disk and perform post hoc analysis. Which is the conventional method
 of analyzing data after a computational simulation has finished. One way to get
@@ -40,7 +41,7 @@ time, otherwise have to go back and re-perform part or all of the simulation
 again. While in situ analysis has become an increasingly important part of HPC,
 sophisticated techniques are needed to compute on exascale supercomputers.
 
-\noindent The explosion in machine learning research has generated many
+ The explosion in machine learning research has generated many
 sophisticated and complex techniques that can potentially help the scientific
 community. Techniques like super resolution~\cite{super} can be used to
 compress images, greatly reducing storage space. Machine learning algorithms are
@@ -49,23 +50,36 @@ the parameter space of scientific simulations~\cite{He}. These techniques
 allow for post hoc exploration of varying parameters without performing new
 simulations.
 
-\noindent
+
+\textbf{Research Question:}
+
+ Through this funding I will be researching how machine learning can be
+used to compress and interpolate time series simulation data for high
+performance computing.
+
+
 \textbf{Work Plan:}
 
-\noindent With this fellowship I plan on researching machine learning algorithms
+ With this fellowship I plan on researching machine learning algorithms
 to perform time-series interpolations on scientific data. To achieve this I will
 break down the project into five tasks that will be spread out over a three
-years plan. The first task will be to analyze and develop methods for feature
-reduction so that data can fit onto GPU memory. The second task will be to
-research algorithms that demonstrate compression and encoding techniques, on
-scientific data, that improves on current methods. Third, I will explore
-techniques to perform basic time-series interpolation of scientific data.
-Fourth, I will research the ability to generalize these techniques and determine
-the limitations to each, and where they can best be applied. Fifth, I will focus
-on converting these to online algorithms, so that training and fine tuning can
-be done in situ.
+years plan. The tasks are: 1) to find feature reduction techniques, 2) research
+compression and encoding algorithms to fit data into GPU memory, 3) explore
+techniques for time-series interpolation on scientific data, 4) study the
+generalization and limitations of the developed algorithms, 5) convert to online
+algorithms so the learning can be done in situ.
 
-\noindent The first task is to research feature reduction techniques for
+%The first task will be to analyze and develop methods for feature
+%reduction so that data can fit onto GPU memory. The second task will be to
+%research algorithms that demonstrate compression and encoding techniques, on
+%scientific data, that improves on current methods. Third, I will explore
+%techniques to perform basic time-series interpolation of scientific data.
+%Fourth, I will research the ability to generalize these techniques and determine
+%the limitations to each, and where they can best be applied. Fifth, I will focus
+%on converting these to online algorithms, so that training and fine tuning can
+%be done in situ.
+
+ The first task is to research feature reduction techniques for
 scientific data. In an HPC setting, simulations can produce petabytes of data a
 day, which is much larger than data sets conventionally used in machine learning
 algorithms. Current GPU architectures cannot store this much data but are
@@ -73,7 +87,7 @@ essential for machine learning. I will explore established techniques, such as
 t-SNE and Principle Component Analysis, to reduce the feature space and
 determine which features are necessary.
 
-\noindent The second task is to research compression and encoding techniques to
+ The second task is to research compression and encoding techniques to
 fit the required features space and architecture into GPU memory. Making
 simulation data as small as possible reduces training time and reduces the
 computational load. One of the breakthroughs in modern machine learning is using
@@ -87,7 +101,7 @@ point instead of starting again from the beginning. With the completion of this
 milestone scientists will be able to more easily restart simulations and be able
 to save more data out for post hoc analysis.
 
-\noindent The third task is to research techniques for time series interpolation
+ The third task is to research techniques for time series interpolation
 methods. The goal is to develop architectures that can predict 
 the underlying physics and perform interpolations over large time-steps. Some
 of the newest machine learning techniques provide methods that imply this
@@ -104,20 +118,20 @@ scientific analysis. These architectures provide a necessary component that
 helps enable algorithms to understand the structure of time within scientific
 computing. 
 
-\noindent The fourth task to to research the generalizability of these
+ The fourth task to to research the generalizability of these
 interpolation algorithms. Generalization is one of the most difficult tasks in
 machine learning. With any algorithmic development it is important to understand
 its applications and limitations. A deep analysis will need to be performed to
 determine the extent of generalization and how much fine tuning will need to be
 done. 
 
-\noindent The fifth task is to convert these algorithms to online algorithms so
+ The fifth task is to convert these algorithms to online algorithms so
 that fine tuning can happen in situ. This will add flexibility for scientists
 and decrease the computational demands of the algorithms. 
 
-\noindent
+
 \textbf{Intellectual Merit}
-\\\noindent
+\\
 Success of this research would lead to a reduction in the search space for
 simulation scientists. It would also lead to a reduction of data storage and
 potentially lead to greater capabilities in both in situ and post hoc analysis. 
@@ -125,7 +139,7 @@ Success would result in less computational resources required as well as
 decrease the time that scientists need to perform their research. 
 %
 \\\textbf{Broader Impacts} 
-\\\noindent
+\\
 Success of this research would result in a large reduction in memory consumption
 of HPC applications while also allowing for better understanding of data. HPC is
 being used to tackle some of the toughest scientific challenges facing humanity,
