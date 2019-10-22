@@ -15,52 +15,56 @@
 % --------------- MATH PACKAGES -------------------------------
 \usepackage{amsmath,amsthm,amssymb}
 \setlength{\parindent}{0pt}
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.3ex}
+}
 \begin{document}
 % --------------- TITLE AND NAME ------------------------------
 \begin{center}
 \underline{\bf Graduate Research Plan Statement}\\
-{\bf Time-series Interpolation of Scientific Data via Machine Learning} \\
+{\bf Time-Series Interpolation of Scientific Data via Machine Learning} \\
 \end{center}
 % --------------- CONTENT -------------------------------------
 
 
 \textbf{Background:}
 %
-
 Big Data is a major challenge for computational simulations 
 in High Performance Computing (HPC).
 %
-Traditionally, these simulations have saved their state at
+Traditionally, these simulations save their state at
 regular intervals to disk, which enables post hoc analysis
 and visualization after the simulation has run.
 %
-However, while disk capacity and bandwidth is increasing on each
-new generation of supercomputer, it is increasing much more slowly
+However, while disk capacity and bandwidth are increasing on each
+new generation of supercomputer, they are increasing much more slowly
 than the ability to compute data.
 %
-For example, the Texas Advanced Computing Center (TACC) supercomputers
-have increased disk bandwidth by approximately a factor of ten over
-the last decade, while compute power (i.e., the ability to computer
-data) has gone up by a factor of one hundred.
+For example, over the last decade, the Texas Advanced Computing Center (TACC) 
+supercomputers have increased disk bandwidth by approximately a factor of ten, 
+while compute power (i.e., the ability to compute data) has increased by a 
+factor of one hundred.
 %
-%There is not enough storage capacity to save simulation output to
-%disk and perform post hoc analysis, which is the conventional method of
-%analyzing data after a computational simulation has finished. 
 %
 As a result, the traditional method for post hoc analysis and visualization
-is rapidly falling out of favor, and is being replaced by in situ processing,
-%One way to get
-%around the storage costs is by doing analysis in situ, 
+is rapidly falling out of favor. Instead, simulations are increasingly
+incorporating in situ processing,
 i.e., analyzing and performing
-visualization tasks while the data is still being generated. 
+visualization tasks while the data is being generated. 
 %
-With this mode, simulation data can be significantly reduced, and then
-stored in a reduced form.
-%Once the analysis
-%is performed, then the data is stored in a reduced form. 
+% Don't like "with in situ" too close to "within situ"
+%With in situ methods, simulation data can be significantly reduced, and then
+%stored in a reduced form.
+In situ methods allow analysis to be performed on a subset of the 
+simulation data and processed results are then stored in a reduced form. Further
+analysis can then be explored in a post hoc manner. 
+%
 However, this can have major
 drawbacks --- scientists cannot re-analyze or come back to parts of
-simulations after they have thought more deeply about problems or have insights
+simulations after they have thought more deeply about problems or gained insights
 from other work. 
 %
 In essence, scientists have to hope that they got the analysis
@@ -70,21 +74,16 @@ the simulation again.
 To solve this problem, we need to develop in situ techniques that maximize the information 
 extracted while the simulation is running.
 %
-This problem is an open research problem.
-
-%That said, while in situ analysis is increasingly 
-%While in situ analysis has become an increasingly
-%important part of HPC, sophisticated techniques are needed to compute on
-%exascale supercomputers.
+This is an open research problem.
 
 Fortunately, the explosion in machine learning research has generated many
-sophisticated and complex techniques that can potentially help the computational simulation
+techniques that can potentially help the computational simulation
 community. 
 %
 While several relevant works have shown that machine learning can play a role in scientific
-visualization~\cite{super,Berg,He}, additional research is needed to explore how
-machine learning can used to address the problem of maximizing the in situ extraction
-of information.
+visualization~\cite{Berg,He,super}, additional research is needed to explore how
+machine learning can be used to address the problem of maximizing the in situ 
+extraction of information.
 %Techniques like super resolution~\cite{super} can be used to
 %compress images, greatly reducing storage space. Machine learning algorithms are
 %capable of performing scientific computations~\cite{Berg}, as well as explore
@@ -94,34 +93,39 @@ of information.
 %simulations.
 
 
-\textbf{Research Question:}
-
-Machine learning's role in computational simulation is still an open question.
+\textbf{Research Question:} Machine learning's role for in situ visualization is
+still an open question.
 %
-One such question is, how can simulation data be stored in a manner useful to machine
-learning algorithms?
+The focus of my proposed research is asking how machine learning might be used
+to interpolate time-series scientific data. This question leads to asking many
+sub questions.  One such sub question is, how can simulation data be encoded in
+a manner useful to machine learning algorithms?
 %
-This involves determining what features are relevenat to simulation data, and 
-how to compress or encode the relevant information.
+This involves determining what features are relevant to simulation data, and how
+to compress or encode the relevant information. Additionally, can the relevant
+features for HPC simulation data be stored on modern GPUs? And if so, how?
 %
 What methods might be used to perform interpolation on highly irregular data?
-Can machine learning algorithms learn enough physics to make accurate interpolations
-on meaningful timesteps?
+Can machine learning algorithms learn enough physics to make accurate
+interpolations with meaningful temporal differences? 
 %
-As well as if machine learning can be used in situ. 
+Additionally, which machine learning techniques execute quickly enough to be
+used in situ? 
 %
+These questions will need to be answered to determine what role machine
+learning can play for in situ visualization.
 
 
 \textbf{Work Plan:}
-
- With this fellowship I plan on researching machine learning algorithms
-to perform time-series interpolations on scientific data. To achieve this I will
+My work plan for this fellowship addresses my research questions.
+To achieve this I will
 break down the project into five tasks that will be spread out over a three
-years plan. The tasks are: 1) to find feature reduction techniques, 2) research
+years plan. The tasks are to: 1) find feature reduction techniques, 2) research
 compression and encoding algorithms to fit data into GPU memory, 3) explore
 techniques for time-series interpolation on scientific data, 4) study the
-generalization and limitations of the developed algorithms, 5) convert to online
-algorithms so the learning can be done in situ.
+generalization and limitations of the developed algorithms, 5) utilize online
+algorithms so the learning can be done in situ. I describe my specific plans for
+these tasks in the remainder of this section.
 
 %The first task will be to analyze and develop methods for feature
 %reduction so that data can fit onto GPU memory. The second task will be to
@@ -184,16 +188,14 @@ that fine tuning can happen in situ. This will add flexibility for scientists
 and decrease the computational demands of the algorithms. 
 
 
-\textbf{Intellectual Merit}
-\\
+\textbf{Intellectual Merit:}
 Success of this research would lead to a reduction in the search space for
 simulation scientists. It would also lead to a reduction of data storage and
 potentially lead to greater capabilities in both in situ and post hoc analysis. 
 Success would result in less computational resources required as well as
 decrease the time that scientists need to perform their research. 
 %
-\\\textbf{Broader Impacts} 
-\\
+\\\textbf{Broader Impacts:} 
 Success of this research would result in a large reduction in memory consumption
 of HPC applications while also allowing for better understanding of data. HPC is
 being used to tackle some of the toughest scientific challenges facing humanity,
@@ -205,7 +207,8 @@ challenging problems.
 
 % --------------- WORKS CITED (10pt FONT) ---------------------
 
-\footnotesize
+%\footnotesize
+\scriptsize
 \bibliographystyle{acm}
 \bibliography{Research}
 %\begin{thebibliography}{aa}
