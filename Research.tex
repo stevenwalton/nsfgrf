@@ -27,36 +27,89 @@
 \textbf{Background:}
 %
 
-One large challenge for simulations on High Performance Computing (HPC) is
-handling data. There is not enough storage capacity to save simulation output to
-disk and perform post hoc analysis, which is the conventional method of
-analyzing data after a computational simulation has finished. One way to get
-around the storage costs is by doing analysis in situ, analyzing and performing
-visualization tasks while the data is still being generated. Once the analysis
-is performed, then the data is stored in a reduced form. This can have major
-drawbacks because scientists cannot re-analyze or come back to parts of
-simulations after they have thought more deeply about problems and have insights
-from other work. In essence, scientists have to hope that they got the analysis
+Big Data is a major challenge for computational simulations 
+in High Performance Computing (HPC).
+%
+Traditionally, these simulations have saved their state at
+regular intervals to disk, which enables post hoc analysis
+and visualization after the simulation has run.
+%
+However, while disk capacity and bandwidth is increasing on each
+new generation of supercomputer, it is increasing much more slowly
+than the ability to compute data.
+%
+For example, the Texas Advanced Computing Center (TACC) supercomputers
+have increased disk bandwidth by approximately a factor of ten over
+the last decade, while compute power (i.e., the ability to computer
+data) has gone up by a factor of one hundred.
+%
+%There is not enough storage capacity to save simulation output to
+%disk and perform post hoc analysis, which is the conventional method of
+%analyzing data after a computational simulation has finished. 
+%
+As a result, the traditional method for post hoc analysis and visualization
+is rapidly falling out of favor, and is being replaced by in situ processing,
+%One way to get
+%around the storage costs is by doing analysis in situ, 
+i.e., analyzing and performing
+visualization tasks while the data is still being generated. 
+%
+With this mode, simulation data can be significantly reduced, and then
+stored in a reduced form.
+%Once the analysis
+%is performed, then the data is stored in a reduced form. 
+However, this can have major
+drawbacks --- scientists cannot re-analyze or come back to parts of
+simulations after they have thought more deeply about problems or have insights
+from other work. 
+%
+In essence, scientists have to hope that they got the analysis
 correct the first time, otherwise have to go back and re-perform part or all of
-the simulation again. While in situ analysis has become an increasingly
-important part of HPC, sophisticated techniques are needed to compute on
-exascale supercomputers.
+the simulation again. 
+%
+To solve this problem, we need to develop in situ techniques that maximize the information 
+extracted while the simulation is running.
+%
+This problem is an open research problem.
 
- The explosion in machine learning research has generated many
-sophisticated and complex techniques that can potentially help the scientific
-community. Techniques like super resolution~\cite{super} can be used to
-compress images, greatly reducing storage space. Machine learning algorithms are
-capable of performing scientific computations~\cite{Berg}, as well as explore
-the parameter space of scientific simulations~\cite{He}. These techniques 
-allow for post hoc exploration of varying parameters without performing new
-simulations.
+%That said, while in situ analysis is increasingly 
+%While in situ analysis has become an increasingly
+%important part of HPC, sophisticated techniques are needed to compute on
+%exascale supercomputers.
+
+Fortunately, the explosion in machine learning research has generated many
+sophisticated and complex techniques that can potentially help the computational simulation
+community. 
+%
+While several relevant works have shown that machine learning can play a role in scientific
+visualization~\cite{super,Berg,He}, additional research is needed to explore how
+machine learning can used to address the problem of maximizing the in situ extraction
+of information.
+%Techniques like super resolution~\cite{super} can be used to
+%compress images, greatly reducing storage space. Machine learning algorithms are
+%capable of performing scientific computations~\cite{Berg}, as well as explore
+%the parameter space of scientific simulations~\cite{He}. 
+%These techniques 
+%allow for post hoc exploration of varying parameters without performing new
+%simulations.
 
 
 \textbf{Research Question:}
 
- Through this funding I will be researching how machine learning can be
-used to compress and interpolate time series simulation data for high
-performance computing.
+Machine learning's role in computational simulation is still an open question.
+%
+One such question is, how can simulation data be stored in a manner useful to machine
+learning algorithms?
+%
+This involves determining what features are relevenat to simulation data, and 
+how to compress or encode the relevant information.
+%
+What methods might be used to perform interpolation on highly irregular data?
+Can machine learning algorithms learn enough physics to make accurate interpolations
+on meaningful timesteps?
+%
+As well as if machine learning can be used in situ. 
+%
 
 
 \textbf{Work Plan:}
