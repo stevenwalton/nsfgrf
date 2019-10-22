@@ -68,7 +68,7 @@ simulations after they have thought more deeply about problems or gained insight
 from other work. 
 %
 In essence, scientists have to hope that they got the analysis
-correct the first time, otherwise have to go back and re-perform part or all of
+correct the first time, otherwise, have to go back and re-perform part or all of
 the simulation again. 
 %
 To solve this problem, we need to develop in situ techniques that maximize the information 
@@ -81,7 +81,7 @@ techniques that can potentially help the computational simulation
 community. 
 %
 While several relevant works have shown that machine learning can play a role in scientific
-visualization~\cite{Berg,He,super}, additional research is needed to explore how
+visualization~\cite{He,super}, additional research is needed to explore how
 machine learning can be used to address the problem of maximizing the in situ 
 extraction of information.
 %Techniques like super resolution~\cite{super} can be used to
@@ -98,7 +98,7 @@ still an open question.
 %
 The focus of my proposed research is asking how machine learning might be used
 to interpolate time-series scientific data. This question leads to asking many
-sub questions.  One such sub question is, how can simulation data be encoded in
+sub-questions.  One such sub-question is, how can simulation data be encoded in
 a manner useful to machine learning algorithms?
 %
 This involves determining what features are relevant to simulation data, and how
@@ -116,16 +116,14 @@ These questions will need to be answered to determine what role machine
 learning can play for in situ visualization.
 
 
-\textbf{Work Plan:}
-My work plan for this fellowship addresses my research questions.
-To achieve this I will
-break down the project into five tasks that will be spread out over a three
-year plan. The tasks are to: T1) find feature reduction techniques, T2) research
-compression and encoding algorithms to fit data into GPU memory, T3) explore
-techniques for time-series interpolation on scientific data, T4) study the
-generalization and limitations of the developed algorithms, T5) utilize online
-algorithms so the learning can be done in situ. I describe my specific plans for
-these tasks in the remainder of this section.
+\textbf{Work Plan:} My work plan for this fellowship addresses my research
+questions.  To achieve this I will break down the project into five tasks that
+will be spread out over a three-year plan. The tasks are to: T1) find feature
+reduction techniques, T2) research compression and encoding algorithms to fit
+data into GPU memory, T3) explore techniques for time-series interpolation on
+scientific data, T4) study the generalization and limitations of the developed
+algorithms, T5) utilize online algorithms so the learning can be done in situ. I
+describe my specific plans for these tasks in the remainder of this section.
 
 %The first task will be to analyze and develop methods for feature
 %reduction so that data can fit onto GPU memory. The second task will be to
@@ -180,36 +178,36 @@ to be learned by the algorithm.
 
 T4, researching the generalizability of these
 interpolation algorithms, generalization is one of the most difficult tasks in
-machine learning. With any algorithmic development it is important to understand
+machine learning. With any algorithmic development, it is important to understand
 its applications and limitations. A deep analysis will need to be performed to
-determine the extent of generalization and how much fine tuning will need to be
+determine the extent of generalization and how much fine-tuning will need to be
 done. 
 
 T5, convert our algorithms to online algorithms so
-that fine tuning can happen in situ, which adds flexibility for scientists
+that fine-tuning can happen in situ, which adds flexibility for scientists
 and decrease the computational demands of the algorithms. 
 
 
-\textbf{Intellectual Merit:}
-This proposal aims to apply machine learning to scientific data sets for
-computer simulations. It endeavors to do fundamental research on how large data
-sets can be mapped into machine learning frameworks and how these frameworks can
-be used to solve a specific problem -- time series interpolation. 
+\textbf{Intellectual Merit:} This proposal aims to do fundamental research in
+applying machine learning to scientific data sets for computer simulations. It
+is novel in that it endeavors to map large data sets 
+into machine learning frameworks and also to use these frameworks to solve a
+specific problem --- time series interpolation. 
 %Success of this research would lead to a reduction in the search space for
 %simulation scientists. It would also lead to a reduction of data storage and
-%potentially lead to greater capabilities in both in situ and post hoc analysis. 
+%potentially lead to greater capabilities in both in situ and post hoc analysis.
 %Success would result in less computational resources required as well as
 %decrease the time that scientists need to perform their research. 
 %
-\\\textbf{Broader Impacts:} 
-Success of this research would result in a large reduction in memory consumption
-of HPC applications while also allowing for better understanding of data. HPC is
-being used to tackle some of the toughest scientific challenges facing humanity,
-namely climate research, clean energy, and medical research. Enabling this
-science to be done more efficiently and faster directly results in a higher
-quality for people living on the planet. Through NSF this research can be public
-and help scientists everywhere have better tools when facing the most
-challenging problems.
+\\\textbf{Broader Impacts:} Success of this research would result in a large
+reduction in search space for simulation scientists. It would also lead to lower 
+memory consumption of HPC applications, while also allowing for a
+better understanding of data. HPC is being used to tackle some of the toughest
+scientific challenges facing humanity, namely climate research, clean energy,
+and medical research. Enabling this science to be done more efficiently and
+faster directly results in a higher quality for people living on the planet.
+Through NSF this research can be public and help scientists everywhere have
+better tools when facing the most challenging problems.
 
 % --------------- WORKS CITED (10pt FONT) ---------------------
 
