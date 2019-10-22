@@ -120,10 +120,10 @@ learning can play for in situ visualization.
 My work plan for this fellowship addresses my research questions.
 To achieve this I will
 break down the project into five tasks that will be spread out over a three
-years plan. The tasks are to: 1) find feature reduction techniques, 2) research
-compression and encoding algorithms to fit data into GPU memory, 3) explore
-techniques for time-series interpolation on scientific data, 4) study the
-generalization and limitations of the developed algorithms, 5) utilize online
+year plan. The tasks are to: T1) find feature reduction techniques, T2) research
+compression and encoding algorithms to fit data into GPU memory, T3) explore
+techniques for time-series interpolation on scientific data, T4) study the
+generalization and limitations of the developed algorithms, T5) utilize online
 algorithms so the learning can be done in situ. I describe my specific plans for
 these tasks in the remainder of this section.
 
@@ -137,63 +137,69 @@ these tasks in the remainder of this section.
 %on converting these to online algorithms, so that training and fine tuning can
 %be done in situ.
 
- The first task is to research feature reduction techniques for
-scientific data. In an HPC setting, simulations can produce petabytes of data a
+T1, the motivation for feature reduction techniques for
+scientific data is that HPC simulations can produce petabytes of data a
 day, which is much larger than data sets conventionally used in machine learning
-algorithms. Current GPU architectures cannot store this much data but are
-essential for machine learning. I will explore established techniques, such as
+algorithms. Current GPU architectures, which are essential for machine learning,
+are limited in memory. I will explore established techniques, such as
 t-SNE and Principle Component Analysis, to reduce the feature space and
 determine which features are necessary.
 
- The second task is to research compression and encoding techniques to
-fit the required features space and architecture into GPU memory. Making
-simulation data as small as possible reduces training time and reduces the
+The motivation for T2, researching compression and encoding techniques to  
+fit the required feature space and architecture into GPU memory, is to make
+simulation data as small as possible to reduce training time and 
 computational load. One of the breakthroughs in modern machine learning is using
 it for compression. It has been shown that machine learning can be used to
 perform complex encodings of data that can be used to regenerate the original
-set. This type of encoding will be important for several reasons. Once we have a
-good encoding we can reduce our memory burden and free up resources for
+set. This type of encoding will be important for several reasons. A
+good encoding can reduce memory burden and free up resources for
 competing computations. This can also enable more checkpointing for the
-simulations; where a checkpoint can allow for a simulation to be run from that
+simulations, where a checkpoint can allow for a simulation to be run from that
 point instead of starting again from the beginning. With the completion of this
-milestone scientists will be able to more easily restart simulations and be able
+milestone, scientists will be able to more easily restart simulations and be able
 to save more data out for post hoc analysis.
 
- The third task is to research techniques for time series interpolation
-methods. The goal is to develop architectures that can predict 
-the underlying physics and perform interpolations over large time-steps. Some
-of the newest machine learning techniques provide methods that imply this
-possible. Architectures like Recurrent Neural Networks (RNNs), Transformers, and
-Attention demonstrate the ability for the algorithms to become contextually
-aware. An important aspect of interpolating scientific data is to understand how
-parts of the data move within a given system. Conventional methods use momentum
-of data points to determine how different subsections of data evolve compared to
-others. These architectures have provided great leaps forward in Natural
-Language Processing with the ability to construct large scale text that is
-nearly indistinguishable from human writing~\cite{radford2019language}. This
-same contextual awareness can theoretically be applied to the language of
-scientific analysis. These architectures provide a necessary component that
-helps enable algorithms to understand the structure of time within scientific
-computing. 
+The goal for T3, researching techniques for time series interpolation methods,
+is to develop architectures that can predict the underlying physics and perform
+interpolations over large time steps. Some of the newest machine learning
+techniques provide methods that imply this possibility. Modern architectures,
+such as Recurrent Neural Networks and Transformers, demonstrate the
+ability for the algorithms to become contextually aware. An important aspect of
+interpolating scientific data is to understand how parts of the data move within
+a given system. Conventional methods use momentum of data points to determine
+how different subsections of data evolve compared to others. Modern machine
+learning architectures present the possibility for similar contextual knowledge
+to be learned by the algorithm.
+%These architectures have provided great leaps forward in Natural Language
+%Processing with the ability to construct large scale text that is nearly
+%indistinguishable from human writing~\cite{radford2019language}. This same
+%contextual awareness can theoretically be applied to the process of scientific
+%analysis.  . These architectures provide a necessary component that helps
+%enable algorithms to understand the structure of time within scientific
+%computing. 
 
- The fourth task to to research the generalizability of these
-interpolation algorithms. Generalization is one of the most difficult tasks in
+T4, researching the generalizability of these
+interpolation algorithms, generalization is one of the most difficult tasks in
 machine learning. With any algorithmic development it is important to understand
 its applications and limitations. A deep analysis will need to be performed to
 determine the extent of generalization and how much fine tuning will need to be
 done. 
 
- The fifth task is to convert these algorithms to online algorithms so
-that fine tuning can happen in situ. This will add flexibility for scientists
+T5, convert our algorithms to online algorithms so
+that fine tuning can happen in situ, which adds flexibility for scientists
 and decrease the computational demands of the algorithms. 
 
 
 \textbf{Intellectual Merit:}
-Success of this research would lead to a reduction in the search space for
-simulation scientists. It would also lead to a reduction of data storage and
-potentially lead to greater capabilities in both in situ and post hoc analysis. 
-Success would result in less computational resources required as well as
-decrease the time that scientists need to perform their research. 
+This proposal aims to apply machine learning to scientific data sets for
+computer simulations. It endeavors to do fundamental research on how large data
+sets can be mapped into machine learning frameworks and how these frameworks can
+be used to solve a specific problem -- time series interpolation. 
+%Success of this research would lead to a reduction in the search space for
+%simulation scientists. It would also lead to a reduction of data storage and
+%potentially lead to greater capabilities in both in situ and post hoc analysis. 
+%Success would result in less computational resources required as well as
+%decrease the time that scientists need to perform their research. 
 %
 \\\textbf{Broader Impacts:} 
 Success of this research would result in a large reduction in memory consumption
